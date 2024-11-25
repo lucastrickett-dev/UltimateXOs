@@ -45,7 +45,7 @@ void TicTacToe_state::change_turn() {
     turn = (turn == 'x') ? 'o' : 'x';
 }
 
-MCTS_state *TicTacToe_state::next_state(const MCTS_move *move) const {
+MCTS_state* TicTacToe_state::next_state(const MCTS_move *move) const {
     // Note: We have to manually cast it to its correct type
     TicTacToe_move *m = (TicTacToe_move *) move;
     TicTacToe_state *new_state = new TicTacToe_state(*this);  // create new state from current

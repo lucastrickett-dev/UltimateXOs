@@ -27,7 +27,7 @@ Ultimate_XO_state::Ultimate_XO_state(const Ultimate_XO_state &other):
     end_state(other.end_state) {}
 
 
-int Ultimate_XO_state::get_turn() const { return player_turn; } // Alternate turns based on grid_pointer
+int Ultimate_XO_state::get_turn() const { return ((player_turn) ? PLAYER1: PLAYER2); } // Alternate turns based on grid_pointer
 
 game_state_t Ultimate_XO_state::get_winner() const { return end_state; }
 
@@ -160,6 +160,9 @@ double Ultimate_XO_state::rollout() const {
         delete random_move;
         delete state_copy; // Clean up the previous state
         state_copy = dynamic_cast<Ultimate_XO_state *>(next);
+
+
+        // state_copy->print();
     }
 
     // Determine the winner and calculate the reward

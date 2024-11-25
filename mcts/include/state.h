@@ -4,7 +4,6 @@
 #include <stdexcept>
 #include <queue>
 
-
 using namespace std;
 
 
@@ -28,9 +27,7 @@ public:
     virtual MCTS_state *next_state(const MCTS_move *move) const = 0;
     virtual double rollout() const = 0;
     virtual bool is_terminal() const = 0;
-    virtual void print() const {
-        cout << "Printing not implemented" << endl;
-    }
+    virtual void print() const = 0;
     virtual bool player1_turn() const = 0;     // MCTS is for two-player games mostly -> (keeps win rate)
 };
 

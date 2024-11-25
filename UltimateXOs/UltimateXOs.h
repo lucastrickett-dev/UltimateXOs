@@ -20,7 +20,7 @@ class Ultimate_XO_state : public MCTS_state {
 private:
     std::vector<std::vector<std::vector<std::uint8_t>>> subboard; // [subgrid][row][col]
     std::vector<std::vector<std::uint8_t>> board;                // [row][col]
-    std::vector<std::uint16_t> possible_moves;                   // Bitmask of legal moves for subgrids
+    std::vector<std::uint16_t> occupied_positions;                   // Bitmask of legal moves for subgrids
     uint8_t grid_pointer;                              // Active subgrid
     bool player_turn;
     game_state_t end_state;

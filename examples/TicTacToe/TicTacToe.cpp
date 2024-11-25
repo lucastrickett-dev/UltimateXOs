@@ -61,6 +61,7 @@ MCTS_state* TicTacToe_state::next_state(const MCTS_move *move) const {
 }
 
 queue<MCTS_move *> *TicTacToe_state::actions_to_try() const {
+    
     queue<MCTS_move *> *Q = new queue<MCTS_move *>();
     for (int i = 0 ; i < 9 ; i++) {
         if (board[i / 3][i % 3] == ' ') {
